@@ -77,7 +77,7 @@ export default function Landing() {
           <Link color="inherit" href="https://mui.com/">
             Montour
           </Link>{" "}
-          {new Date().getFullYear()}
+          2023
           {"."}
         </Typography>
       </Box>

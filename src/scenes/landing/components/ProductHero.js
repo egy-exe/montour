@@ -40,6 +40,10 @@ export default function ProductHero() {
           opacity: 0.6,
           backgroundColor: "white",
           color: "black",
+          borderRadius: 2,
+          "&:hover": {
+            bgcolor: "white",
+          },
         }}
       >
         Хайх...
