@@ -3,6 +3,8 @@ import Landing from "./scenes/landing";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import ProductHero from "./fail";
+import "./styles/helper_styles.scss";
+import "./styles/app.scss";
 
 const theme = createTheme();
 

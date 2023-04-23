@@ -12,12 +12,7 @@ const rightIcon = {
 
 const TopBar = () => {
   return (
-    <AppBar
-      position="fixed"
-      sx={{
-        width: "100%",
-      }}
-    >
+    <AppBar position="fixed" className="ww-100">
       <Toolbar
         sx={{
           backgroundColor: "white",
@@ -41,31 +36,16 @@ const TopBar = () => {
             display: "flex",
           }}
         >
-          <Link
-            variant="h6"
-            underline="none"
-            href="/"
-            sx={{ fontSize: 17, color: "#f05821", fontWeight: "bold" }}
-          >
+          <Link className="top-bar" variant="h6" underline="none" href="/">
             {"Зочид буудал"}
           </Link>
           <Divider orientation="vertical" flexItem />
-          <Link
-            variant="h6"
-            underline="none"
-            href="/"
-            sx={{ fontSize: 17, color: "#f05821", fontWeight: "bold" }}
-          >
+          <Link className="top-bar" variant="h6" underline="none" href="/">
             {"Амралтын газар"}
           </Link>
           <Divider orientation="vertical" flexItem />
-          <Link
-            variant="h6"
-            underline="none"
-            href="/"
-            sx={{ fontSize: 17, color: "#f05821", fontWeight: "bold" }}
-          >
-            {"Аялалын компани"}
+          <Link className="top-bar" variant="h6" underline="none" href="/">
+            {"Аяллын компани"}
           </Link>
         </Box>
         <Box>

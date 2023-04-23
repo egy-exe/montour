@@ -1,0 +1,14 @@
+$primary: #f05821;
+$footer-color: #333333;
+
+.App {
+  .top-bar {
+    font-size: large;
+    color: $primary;
+    font-weight: bold;
+  }
+  .footer {
+    background-color: $footer-color;
+    color: #dddddd;
+  }
+}
