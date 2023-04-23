@@ -1,7 +1,5 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Grid from "@mui/material/Grid";
@@ -22,37 +20,43 @@ export default function Landing() {
       <main>
         {/* Hero unit */}
         <ProductHero />
-        <Container sx={{ py: 8 }} maxWidth="md">
-          <Grid container spacing={6}>
+        <Container
+          sx={{ display: "flex", justifyContent: "center", width: "100%" }}
+        >
+          <Typography sx={{ pt: 5 }} variant="h4" align="center">
+            Санал болгох аялалууд
+          </Typography>
+        </Container>
+        <Container sx={{ py: 5 }}>
+          <Grid container spacing={5}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={3}>
                 <Card
                   sx={{
                     height: "100%",
-                    width: 200,
+                    width: 260,
                     display: "flex",
                     flexDirection: "column",
+                    alignItems: "center",
                   }}
+                  elevation={0}
                 >
                   <CardMedia
                     component="img"
                     image="https://source.unsplash.com/random"
                     alt="random"
+                    sx={{ borderRadius: "50%", width: 170, height: 170 }}
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="h2"
+                      sx={{ alignItems: "center" }}
+                    >
                       Heading
                     </Typography>
-                    <Typography>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Assumenda voluptatum quod commodi quia eos, temporibus nam
-                      quisquam.
-                    </Typography>
                   </CardContent>
-                  <CardActions>
-                    <Button size="small">View</Button>
-                    <Button size="small">Contact</Button>
-                  </CardActions>
                 </Card>
               </Grid>
             ))}
@@ -60,19 +64,19 @@ export default function Landing() {
         </Container>
       </main>
       {/* Footer */}
-      <Box sx={{ bgcolor: "background.paper", p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
+      <Box sx={{ bgcolor: "#333333", p: 6 }} component="footer">
+        <Typography variant="h6" color="#DDDDDD" align="center" gutterBottom>
           Montour
         </Typography>
         <Typography
           variant="subtitle1"
           align="center"
-          color="text.secondary"
+          color="#DDDDDD"
           component="p"
         >
           We love our users!
         </Typography>
-        <Typography variant="body2" color="text.secondary" align="center">
+        <Typography variant="body2" color="#DDDDDD" align="center">
           {"Copyright © "}
           <Link color="inherit" href="https://mui.com/">
             Montour
