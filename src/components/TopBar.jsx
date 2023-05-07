@@ -1,7 +1,11 @@
-import { AppBar, Box, Divider, Link, Toolbar } from "@mui/material";
+import { AppBar, Box, Button, Divider, Link, Toolbar } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import SearchIcon from "@mui/icons-material/Search";
 import LanguageIcon from "@mui/icons-material/Language";
+import { useTranslation } from "react-i18next";
+import { useContext } from "react";
+import LocaleContext from "../LocaleContext";
+import i18n from "../utils/i18n";
 
 const rightIcon = {
   mr: 3,
@@ -11,6 +15,15 @@ const rightIcon = {
 };
 
 const TopBar = () => {
+  const { locale } = useContext(LocaleContext);
+  const changeLocale = (l) => {
+    if (locale !== l) {
+      i18n.changeLanguage(l);
+    }
+  };
+
+  const { t } = useTranslation();
+
   return (
     <AppBar position="fixed" className="ww-100">
       <Toolbar
@@ -23,11 +36,13 @@ const TopBar = () => {
           alignItems: "center",
         }}
       >
-        <Box
-          component="img"
-          src="/assets/logo.png"
-          sx={{ height: 65, paddingLeft: 12 }}
-        />
+        <Link href="/">
+          <Box
+            component="img"
+            src="/assets/logo.png"
+            sx={{ height: 65, paddingLeft: 12 }}
+          />
+        </Link>
         <Box
           sx={{
             justifyContent: "space-around",
@@ -36,21 +51,27 @@ const TopBar = () => {
             display: "flex",
           }}
         >
-          <Link className="top-bar" variant="h6" underline="none" href="/">
-            {"Зочид буудал"}
+          <Link
+            className="top-bar"
+            variant="h6"
+            underline="none"
+            href="/hotels"
+          >
+            {t("hotel", "Hotel")}
           </Link>
           <Divider orientation="vertical" flexItem />
           <Link className="top-bar" variant="h6" underline="none" href="/">
-            {"Амралтын газар"}
+            {t("resort", "Resort")}
           </Link>
           <Divider orientation="vertical" flexItem />
           <Link className="top-bar" variant="h6" underline="none" href="/">
-            {"Аяллын компани"}
+            {t("agency", "Agency")}
           </Link>
         </Box>
         <Box>
           <SearchIcon sx={rightIcon} />
           <LanguageIcon sx={rightIcon} />
+          <Button onClick={changeLocale("en")}>EN</Button>
           <PersonIcon sx={rightIcon} />
         </Box>
       </Toolbar>
